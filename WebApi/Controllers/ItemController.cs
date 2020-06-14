@@ -34,14 +34,14 @@ namespace WebApi.Controllers
         /// <param name="itemPayload"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<ActionResult<Item>> PostAsync([FromBody] ItemPayload itemPayload)
+        public async Task<ActionResult<ItemResult>> PostAsync([FromBody] ItemPayload itemPayload)
         {
 
             Item item = _mapper.Map<Item>(itemPayload);
 
             await _cosmosDbRepo.AddItemAsync(item);
 
-            return CreatedAtAction(nameof(PostAsync), new { id = item.Id }, item);
+            return Created(nameof(PostAsync),new { Id=item.Id,item.Created});
         }
 
 

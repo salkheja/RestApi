@@ -30,8 +30,7 @@ namespace WebApi.Services
 
         public async Task AddItemAsync(Item t)
         {
-            await this._container.CreateItemAsync<Item>(t, new PartitionKey(t.InternalId));
-          
+          await this._container.CreateItemAsync<Item>(t, new PartitionKey(t.InternalId));
         }
 
 
