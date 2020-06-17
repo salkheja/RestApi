@@ -14,10 +14,5 @@ Clone or download the repository using this link [GitHub Repository](https://git
 - **.Net Core 3.0**
 - **Azure Consmos DB Emulator**
 
-#### Initializing the Database
-- Run Azure Cosmos DB Emulator(click on open data explorer).
-- Explorer => New Container with the below configuration:
-    - Database name: DB
-    - Container id: Item
-    - Partition key: /internalid
+
 
